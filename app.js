@@ -94,16 +94,22 @@ console.log(reverseString('hello'));
 
 function longestStringInArray(str){
     let longest = "";
-    for(let i=0; i<str.length;i++){
-        if(longest.length < str[i].length){
-            longest = str[i];
-        }
+    //For Loop version
+    // for(let i=0; i<str.length;i++){
+    //     if(longest.length < str[i].length){
+    //         longest = str[i];
+    //     }
 
-    }
+    //}
+    str.forEach(function(s){
+        if(longest.length < s.length){
+            longest = s;
+        }
+    })
     return longest;
 }
 
-console.log(longestStringInArray(['hello','helloo','hellooo','hellooooooo']));
+console.log(longestStringInArray(['hello','helloo','hellooo','hellooooooo','woooooooorlllddd']));
 
 
 //9. Define a function, as a function declaration, stringsLongerThan that takes an array of strings and a number as arguments; 
@@ -112,12 +118,21 @@ console.log(longestStringInArray(['hello','helloo','hellooo','hellooooooo']));
 
 function stringsLongerThan(str,num){
     sol = [];
-    for(let i=0; i<str.length;i++){
-        if(str[i].length > num){
-            sol.push(str[i]);
+//For Loop  version
+//     for(let i=0; i<str.length;i++){
+//         if(str[i].length > num){
+//             sol.push(str[i]);
+//         }
+//     }
+//     return sol;
+    str.forEach(function(n){
+        if(n.length > num){
+            sol.push(n);
         }
-    }
+    })
     return sol;
 }
+
+
 
 console.log(stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3));
